@@ -31,6 +31,6 @@ ${IPK_NAME}: ${TGZ_NAME}
 	    --exclude=\*.diz \
 	    --exclude=\*.gif \
 	    ${DIST_NAME}/jre
-	tar czf control.tar.gz control postinst
+	tar czf control.tar.gz control
 	echo 2.0 > debian-binary
 	ar r ${IPK_NAME} control.tar.gz data.tar.gz debian-binary
