@@ -30,6 +30,8 @@ ${IPK_NAME}: ${TGZ_NAME}
 	    --transform "s,^${DIST_NAME}/jre,usr/local/frc/JRE," \
 	    --exclude=\*.diz \
 	    --exclude=\*.gif \
+	    --owner=root \
+	    --group=root \
 	    ${DIST_NAME}/jre
 	tar czf control.tar.gz control
 	echo 2.0 > debian-binary
