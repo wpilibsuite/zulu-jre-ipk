@@ -1,0 +1,10 @@
+Package: zulu-jre
+Version: 1.8.0-121
+Description: Zulu Embedded Java Runtime Environment
+Section: devel
+Priority: optional
+Maintainer: WPILib Developers <wpilib@wpi.edu>
+License: GPL
+Architecture: cortexa9-vfpv3
+OE: zulu-jre
+Homepage: http://www.azul.com/downloads/zulu-embedded/
