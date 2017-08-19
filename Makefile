@@ -1,5 +1,5 @@
 VER=$(shell grep Version control | cut -c 10-)
-DIST_NAME=ezdk-1.8.0_121-8.20.0.42-eval-linux_aarch32sf
+DIST_NAME=ezdk-1.8.0_131-8.21.0.57-eval-linux_aarch32sf
 TGZ_NAME=${DIST_NAME}.tar.gz
 IPK_NAME=zulu-jre_${VER}_cortexa9-vfpv3.ipk
 FETCH_SITE=http://cdn.azul.com/zulu-embedded/bin
