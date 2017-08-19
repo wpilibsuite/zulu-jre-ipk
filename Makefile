@@ -26,9 +26,12 @@ ${TGZ_NAME}:
 
 ${IPK_NAME}: ${TGZ_NAME}
 	tar xzf ${TGZ_NAME}
+	find ${DIST_NAME}/jre -name \*.so -type f | xargs strip
+	strip ${DIST_NAME}/jre/bin/* ${DIST_NAME}/jre/lib/jexec
 	tar czf data.tar.gz \
 	    --transform "s,^${DIST_NAME}/jre,usr/local/frc/JRE," \
 	    --exclude=\*.diz \
+	    --exclude=\*.debuginfo \
 	    --exclude=\*.gif \
 	    --owner=root \
 	    --group=root \
