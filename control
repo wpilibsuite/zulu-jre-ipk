@@ -1,5 +1,5 @@
-Package: zulu-jre
-Version: 1.8.0-131
+Package: zulu-jre-compact2
+Version: 1.8.0-152
 Description: Zulu Embedded Java Runtime Environment
 Section: devel
 Priority: optional

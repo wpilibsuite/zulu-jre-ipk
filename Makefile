@@ -1,7 +1,7 @@
 VER=$(shell grep Version control | cut -c 10-)
-DIST_NAME=ezdk-1.8.0_131-8.21.0.57-eval-linux_aarch32sf
+DIST_NAME=ezre-1.8.0_152-8.25.0.76-eval-compact2-linux_aarch32sf
 TGZ_NAME=${DIST_NAME}.tar.gz
-IPK_NAME=zulu-jre_${VER}_cortexa9-vfpv3.ipk
+IPK_NAME=zulu-jre-compact2_${VER}_cortexa9-vfpv3.ipk
 FETCH_SITE=http://cdn.azul.com/zulu-embedded/bin
 
 .PHONY: all clean fetch ipk
@@ -26,16 +26,16 @@ ${TGZ_NAME}:
 
 ${IPK_NAME}: ${TGZ_NAME}
 	tar xzf ${TGZ_NAME}
-	find ${DIST_NAME}/jre -name \*.so -type f | xargs strip
-	strip ${DIST_NAME}/jre/bin/* ${DIST_NAME}/jre/lib/jexec
+	find ${DIST_NAME} -name \*.so -type f | xargs strip
+	strip ${DIST_NAME}/bin/*
 	tar czf data.tar.gz \
-	    --transform "s,^${DIST_NAME}/jre,usr/local/frc/JRE," \
+	    --transform "s,^${DIST_NAME},usr/local/frc/JRE," \
 	    --exclude=\*.diz \
 	    --exclude=\*.debuginfo \
 	    --exclude=\*.gif \
 	    --owner=root \
 	    --group=root \
-	    ${DIST_NAME}/jre
+	    ${DIST_NAME}
 	tar czf control.tar.gz control
 	echo 2.0 > debian-binary
 	ar r ${IPK_NAME} control.tar.gz data.tar.gz debian-binary
