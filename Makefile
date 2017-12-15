@@ -36,6 +36,6 @@ ${IPK_NAME}: ${TGZ_NAME}
 	    --owner=root \
 	    --group=root \
 	    ${DIST_NAME}/jre
-	tar czf control.tar.gz control
+	tar czf control.tar.gz control postinst prerm
 	echo 2.0 > debian-binary
 	ar r ${IPK_NAME} control.tar.gz data.tar.gz debian-binary
